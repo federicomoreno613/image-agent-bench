@@ -32,6 +32,36 @@ Tope de API: USD 5 incluyendo preparación; 10 minutos y 40 llamadas por tarea.
 Las referencias y los votos permanecen exclusivamente en el evaluador.
 La calidad visual exige revisión humana ciega; éxito técnico no significa calidad.
 
+## Primer resultado medido
+
+12/12 salidas pasaron la verificación técnica. Una foto y tres repeticiones por
+combinación; la revisión humana de calidad visual sigue pendiente.
+
+Promedios por ejecución. Tiempo = agente completo; llamadas y herramientas se cuentan por separado.
+
+| Tarea | Sistema | Tokens entrada / salida | Llamadas modelo | Herramientas | Tiempo (s) | USD estimados |
+|---|---|---:|---:|---:|---:|---:|
+| technical | luna | 1358.3 / 116.3 | 2.67 | 1.67 | 5.65 | 0.0004113 |
+| technical | jev_luna | 436.0 / 38.0 | 1.00 | 1.00 | 1.74 | 0.0000183 |
+| visual | luna | 5475.3 / 396.3 | 4.00 | 3.00 | 12.21 | 0.0008851–0.0009484 |
+| visual | jev_luna | 5990.0 / 436.0 | 5.00 | 3.00 | 13.71 | 0.0009918–0.0010778 |
+
+En el resize conocido, JEV + receta usó **95,5% menos costo estimado** y **69,3% menos
+tiempo de agente**. En el caso visual, JEV derivó a Luna las tres veces: añadió una
+llamada y el conjunto fue algo más lento y caro. Esto apoya reconocer procedimientos
+conocidos; no prueba que encadenar modelos siempre sea mejor.
+
+Con arranque del contenedor y evaluación, los tiempos medios de Harbor fueron:
+technical / luna: 22.06 s; technical / jev_luna: 18.22 s; visual / luna: 29.07 s; visual / jev_luna: 30.67 s.
+
+Costo de API del trabajo experimental completo: **USD 0,00742694–0,00787494**,
+incluyendo un intento previo fallido al guardar la traza. Son estimaciones por
+tokens, no facturas; no incluyen desarrollo, infraestructura ni esta conversación.
+
+[Resultados por intento](reports/pilot.json) · [Protocolo](reports/protocol.md) ·
+[Trazas ATIF y llamadas](reports/traces.jsonl) · [Controles](reports/controls.json) ·
+[Conciliación de consumo](reports/accounting-audit.json)
+
 ## Ejecutar
 
 Requiere Docker funcionando y [uv](https://docs.astral.sh/uv/). El primer paso

@@ -1,0 +1,10 @@
+{
+  "paid_attempts": 13,
+  "completed_pilot_trials": 12,
+  "provider_requests": 41,
+  "api_cost_lower_usd": 0.00742694,
+  "api_cost_upper_usd": 0.00787494,
+  "unknown_requests": 0,
+  "known_resize_cost_reduction_pct": 95.54741449181391,
+  "known_resize_time_reduction_pct": 69.2897495470264
+}
