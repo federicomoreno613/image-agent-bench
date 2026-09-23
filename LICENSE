@@ -21,5 +21,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 This license covers this repository's code and documentation only.
-RetargetMe photographs and reference images are third-party material, are not
-distributed in this repository, and retain their original rights and conditions.
+RetargetMe photographs, reference images, and their derived crops shown under
+assets/ are third-party material and retain their original rights and conditions.
+They are excluded from the MIT license. See the attribution in README.md.

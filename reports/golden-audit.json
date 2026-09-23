@@ -1,0 +1,1021 @@
+{
+  "mode": "posthoc_saved_output_replay",
+  "controls": {
+    "same_reference_matches": true,
+    "different_reference_rejected_as_anchor": true,
+    "wrong_dimensions_rejected": true
+  },
+  "rewards": {
+    "technical_pass_rate": 1.0,
+    "golden_any_exact_match_rate": 0.0,
+    "golden_cr_exact_match_rate": 0.0,
+    "source_exact_crop_rate": 1.0,
+    "existing_file_under_150kb_rate": 0.0,
+    "existing_file_ad_dimensions_rate": 0.0
+  },
+  "pairs_compared": 48,
+  "rows": [
+    {
+      "file": "technical-luna-1.png",
+      "task": "technical",
+      "arm": "luna",
+      "repetition": 1,
+      "sha256": "2828691d1921ecb64f5c5a46f4daca35790073c522b90c5ca640458ff0bac473",
+      "original_trial": "local-results/jobs/pilot-technical-luna-1-20260923T220730811349/dkny-technical__4p7HjvN",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "technical-jev_luna-1.png",
+      "task": "technical",
+      "arm": "jev_luna",
+      "repetition": 1,
+      "sha256": "9d91c23db469ecab00a6fb63e76c9df8a10051fa5f006e38f1b67db4ba2c8f9d",
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-1-20260923T220751469503/dkny-technical__ZP6AYmy",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "visual-jev_luna-1.png",
+      "task": "visual",
+      "arm": "jev_luna",
+      "repetition": 1,
+      "sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a",
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-1-20260923T220809337114/dkny-visual__X3vLTp8",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 550288
+      },
+      "bytes": 550288,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.005522729383358098,
+          "mae_0_255": 18.891376648402673,
+          "rmse_0_255": 34.75125963530536,
+          "psnr_db": 17.3113925854096
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009896220282317979,
+          "mae_0_255": 47.170889247461616,
+          "rmse_0_255": 71.10619443863443,
+          "psnr_db": 11.092654887097913
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.002283966381872214,
+          "mae_0_255": 49.713443962048046,
+          "rmse_0_255": 73.50707275152226,
+          "psnr_db": 10.804221042184892
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0024755061292719167,
+          "mae_0_255": 47.0215172656637,
+          "rmse_0_255": 69.31804598874798,
+          "psnr_db": 11.313877371541768
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.002112741456166419,
+          "mae_0_255": 50.086206429544326,
+          "rmse_0_255": 74.44946508645471,
+          "psnr_db": 10.693571974124225
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0040513558692421995,
+          "mae_0_255": 18.06675450408618,
+          "rmse_0_255": 34.02372756967209,
+          "psnr_db": 17.495165762797356
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0007458441679049034,
+          "mae_0_255": 53.066838665490344,
+          "rmse_0_255": 76.94673192315803,
+          "psnr_db": 10.4070000240631
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0011811617756315007,
+          "mae_0_255": 48.04155541883358,
+          "rmse_0_255": 71.68119642173272,
+          "psnr_db": 11.022698699308597
+        }
+      },
+      "source_crop_box": [
+        128,
+        0,
+        640,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": -8,
+      "golden_crop_coverage_fraction": 0.984375,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    },
+    {
+      "file": "visual-luna-1.png",
+      "task": "visual",
+      "arm": "luna",
+      "repetition": 1,
+      "sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a",
+      "original_trial": "local-results/jobs/pilot-visual-luna-1-20260923T220841673011/dkny-visual__y5hViD4",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 550288
+      },
+      "bytes": 550288,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.005522729383358098,
+          "mae_0_255": 18.891376648402673,
+          "rmse_0_255": 34.75125963530536,
+          "psnr_db": 17.3113925854096
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009896220282317979,
+          "mae_0_255": 47.170889247461616,
+          "rmse_0_255": 71.10619443863443,
+          "psnr_db": 11.092654887097913
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.002283966381872214,
+          "mae_0_255": 49.713443962048046,
+          "rmse_0_255": 73.50707275152226,
+          "psnr_db": 10.804221042184892
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0024755061292719167,
+          "mae_0_255": 47.0215172656637,
+          "rmse_0_255": 69.31804598874798,
+          "psnr_db": 11.313877371541768
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.002112741456166419,
+          "mae_0_255": 50.086206429544326,
+          "rmse_0_255": 74.44946508645471,
+          "psnr_db": 10.693571974124225
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0040513558692421995,
+          "mae_0_255": 18.06675450408618,
+          "rmse_0_255": 34.02372756967209,
+          "psnr_db": 17.495165762797356
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0007458441679049034,
+          "mae_0_255": 53.066838665490344,
+          "rmse_0_255": 76.94673192315803,
+          "psnr_db": 10.4070000240631
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0011811617756315007,
+          "mae_0_255": 48.04155541883358,
+          "rmse_0_255": 71.68119642173272,
+          "psnr_db": 11.022698699308597
+        }
+      },
+      "source_crop_box": [
+        128,
+        0,
+        640,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": -8,
+      "golden_crop_coverage_fraction": 0.984375,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    },
+    {
+      "file": "technical-jev_luna-2.png",
+      "task": "technical",
+      "arm": "jev_luna",
+      "repetition": 2,
+      "sha256": "6aac00d282385f1064bb5a0a0673df1ae999da2bf372dad616894ee50404abaf",
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-2-20260923T220911574446/dkny-technical__ECDYMUJ",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "technical-luna-2.png",
+      "task": "technical",
+      "arm": "luna",
+      "repetition": 2,
+      "sha256": "d6c249b653d636a127814c141149d27e00d4761c3e046bbbb1ac70bea9f4cd72",
+      "original_trial": "local-results/jobs/pilot-technical-luna-2-20260923T220930003878/dkny-technical__J4XgqE2",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "visual-luna-2.png",
+      "task": "visual",
+      "arm": "luna",
+      "repetition": 2,
+      "sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626",
+      "original_trial": "local-results/jobs/pilot-visual-luna-2-20260923T220952896407/dkny-visual__Fx9WZam",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 551015
+      },
+      "bytes": 551015,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.003584114970282318,
+          "mae_0_255": 25.02107711119366,
+          "rmse_0_255": 43.458076247080676,
+          "psnr_db": 15.369393657607981
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009286775631500742,
+          "mae_0_255": 45.70246912147103,
+          "rmse_0_255": 69.51636867300608,
+          "psnr_db": 11.289062052889143
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0036769827265973254,
+          "mae_0_255": 43.92532851968796,
+          "rmse_0_255": 67.27573331192501,
+          "psnr_db": 11.573634802419793
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.001616479383358098,
+          "mae_0_255": 41.73912673353146,
+          "rmse_0_255": 63.29514565255327,
+          "psnr_db": 12.103395536973672
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0015061989227340268,
+          "mae_0_255": 49.32239718765478,
+          "rmse_0_255": 73.5544734642931,
+          "psnr_db": 10.798621789562501
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009054606240713225,
+          "mae_0_255": 34.3760786202947,
+          "rmse_0_255": 55.819724350962595,
+          "psnr_db": 13.195049858192773
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009693072065378901,
+          "mae_0_255": 49.56114567855374,
+          "rmse_0_255": 73.2059548952546,
+          "psnr_db": 10.839875410199527
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0020459927563150075,
+          "mae_0_255": 39.561904098563645,
+          "rmse_0_255": 62.68110611932337,
+          "psnr_db": 12.188070573462843
+        }
+      },
+      "source_crop_box": [
+        150,
+        0,
+        662,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": 14,
+      "golden_crop_coverage_fraction": 0.97265625,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    },
+    {
+      "file": "visual-jev_luna-2.png",
+      "task": "visual",
+      "arm": "jev_luna",
+      "repetition": 2,
+      "sha256": "92d57f9edee26683638a9c02bc69350aba0416116d548238cfb42d44b3484b6f",
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-2-20260923T221022776559/dkny-visual__QuoNFMi",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 550888
+      },
+      "bytes": 550888,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.005142552005943536,
+          "mae_0_255": 20.206398588410106,
+          "rmse_0_255": 36.705206441536326,
+          "psnr_db": 16.836250188238218
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009576987369985141,
+          "mae_0_255": 46.00291759534423,
+          "rmse_0_255": 69.88276399423003,
+          "psnr_db": 11.243402132460375
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0030530274888558692,
+          "mae_0_255": 44.498825609831606,
+          "rmse_0_255": 67.86799607579943,
+          "psnr_db": 11.49750308751982
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0015061989227340268,
+          "mae_0_255": 42.76952738051015,
+          "rmse_0_255": 64.50140543439353,
+          "psnr_db": 11.939420055275463
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0014858841010401188,
+          "mae_0_255": 49.23205620820951,
+          "rmse_0_255": 73.58819458638453,
+          "psnr_db": 10.794640647260735
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0011898681277860326,
+          "mae_0_255": 32.0315450486008,
+          "rmse_0_255": 52.85273237968943,
+          "psnr_db": 13.66945472122282
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0008416140416047549,
+          "mae_0_255": 50.25641561416543,
+          "rmse_0_255": 74.0327132537869,
+          "psnr_db": 10.742330282644017
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.001613577265973254,
+          "mae_0_255": 41.57479143449728,
+          "rmse_0_255": 64.78825392065426,
+          "psnr_db": 11.900878096157259
+        }
+      },
+      "source_crop_box": [
+        145,
+        0,
+        657,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": 9,
+      "golden_crop_coverage_fraction": 0.982421875,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    },
+    {
+      "file": "technical-luna-3.png",
+      "task": "technical",
+      "arm": "luna",
+      "repetition": 3,
+      "sha256": "1aa2fd8c1e9ac81f6bd5d6d9dd6b1aecefae2a72efd098157e06f52799fe8b99",
+      "original_trial": "local-results/jobs/pilot-technical-luna-3-20260923T221053077494/dkny-technical__YFRJ9BD",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "technical-jev_luna-3.png",
+      "task": "technical",
+      "arm": "jev_luna",
+      "repetition": 3,
+      "sha256": "68bfbcab8887384e3c6bfe9c42dffb8e0d3e92969735e2e95a91091156e908b4",
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-3-20260923T221115710024/dkny-technical__b8UTkeL",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "not_applicable",
+        "resize_mae": 0.49794834940652816,
+        "width": 512,
+        "height": 337,
+        "bytes": 268121
+      },
+      "bytes": 268121,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false
+    },
+    {
+      "file": "visual-jev_luna-3.png",
+      "task": "visual",
+      "arm": "jev_luna",
+      "repetition": 3,
+      "sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626",
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-3-20260923T221134083777/dkny-visual__XsNvq3D",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 551015
+      },
+      "bytes": 551015,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.003584114970282318,
+          "mae_0_255": 25.02107711119366,
+          "rmse_0_255": 43.458076247080676,
+          "psnr_db": 15.369393657607981
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009286775631500742,
+          "mae_0_255": 45.70246912147103,
+          "rmse_0_255": 69.51636867300608,
+          "psnr_db": 11.289062052889143
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0036769827265973254,
+          "mae_0_255": 43.92532851968796,
+          "rmse_0_255": 67.27573331192501,
+          "psnr_db": 11.573634802419793
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.001616479383358098,
+          "mae_0_255": 41.73912673353146,
+          "rmse_0_255": 63.29514565255327,
+          "psnr_db": 12.103395536973672
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0015061989227340268,
+          "mae_0_255": 49.32239718765478,
+          "rmse_0_255": 73.5544734642931,
+          "psnr_db": 10.798621789562501
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009054606240713225,
+          "mae_0_255": 34.3760786202947,
+          "rmse_0_255": 55.819724350962595,
+          "psnr_db": 13.195049858192773
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009693072065378901,
+          "mae_0_255": 49.56114567855374,
+          "rmse_0_255": 73.2059548952546,
+          "psnr_db": 10.839875410199527
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0020459927563150075,
+          "mae_0_255": 39.561904098563645,
+          "rmse_0_255": 62.68110611932337,
+          "psnr_db": 12.188070573462843
+        }
+      },
+      "source_crop_box": [
+        150,
+        0,
+        662,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": 14,
+      "golden_crop_coverage_fraction": 0.97265625,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    },
+    {
+      "file": "visual-luna-3.png",
+      "task": "visual",
+      "arm": "luna",
+      "repetition": 3,
+      "sha256": "c59e75c42e9e869f5879957ab76091bcd3be6aae06a572d29f1a87c895a296e4",
+      "original_trial": "local-results/jobs/pilot-visual-luna-3-20260923T221203453269/dkny-visual__W5gL6KK",
+      "technical_checks": {
+        "technical_success": true,
+        "visual_status": "pending",
+        "width": 512,
+        "height": 673,
+        "bytes": 544359
+      },
+      "bytes": 544359,
+      "under_150000_bytes": false,
+      "requested_ad_dimensions": false,
+      "comparisons": {
+        "cr": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0026670458766716197,
+          "mae_0_255": 31.851175551015356,
+          "rmse_0_255": 52.64664546362202,
+          "psnr_db": 13.703389527708172
+        },
+        "sv": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0009460902674591382,
+          "mae_0_255": 44.76025414809311,
+          "rmse_0_255": 68.60030670376622,
+          "psnr_db": 11.404282460883577
+        },
+        "multiop": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0032416651188707283,
+          "mae_0_255": 43.63687933382863,
+          "rmse_0_255": 66.86298818387897,
+          "psnr_db": 11.6270879724712
+        },
+        "sc": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0030530274888558692,
+          "mae_0_255": 38.92004860079248,
+          "rmse_0_255": 60.505935186504324,
+          "psnr_db": 12.494844052052516
+        },
+        "scl": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0012275956537890044,
+          "mae_0_255": 48.58730633203319,
+          "rmse_0_255": 72.70108987516171,
+          "psnr_db": 10.899985178782854
+        },
+        "sm": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0008648309806835066,
+          "mae_0_255": 38.286627623514114,
+          "rmse_0_255": 60.512619240917815,
+          "psnr_db": 12.493884580022726
+        },
+        "sns": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.0010360559063893016,
+          "mae_0_255": 48.13782155460624,
+          "rmse_0_255": 71.73288077726714,
+          "psnr_db": 11.016438161481496
+        },
+        "warp": {
+          "same_dimensions": true,
+          "exact_pixels": false,
+          "matching_pixel_fraction": 0.005302168462109956,
+          "mae_0_255": 35.72950911651808,
+          "rmse_0_255": 58.3416844600164,
+          "psnr_db": 12.811224327524576
+        }
+      },
+      "source_crop_box": [
+        160,
+        0,
+        672,
+        673
+      ],
+      "golden_crop_box": [
+        136,
+        0,
+        648,
+        673
+      ],
+      "horizontal_difference_px": 24,
+      "golden_crop_coverage_fraction": 0.953125,
+      "exact_reference_matches": [],
+      "visual_acceptance": "pending_human_review"
+    }
+  ],
+  "source_pilot_fingerprint": "b492b24c34d964dce3af7eb853487d188710c19dd785edfd64cbfcc1588bb75f",
+  "new_model_calls": 0,
+  "new_api_cost_usd": 0,
+  "original_harbor_receipts": [
+    {
+      "original_trial": "local-results/jobs/pilot-technical-luna-1-20260923T220730811349/dkny-technical__4p7HjvN",
+      "trial_id": "130483ff-13e2-48fb-ac28-b42ade31845a",
+      "started_at": "2026-09-23T22:07:31.404333Z",
+      "finished_at": "2026-09-23T22:07:50.081780Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "6ef2644854a45c8286cf6a1b82c1b851d2a162772289d99bd59663f609cbb6dc",
+      "output_sha256": "2828691d1921ecb64f5c5a46f4daca35790073c522b90c5ca640458ff0bac473",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-1-20260923T220751469503/dkny-technical__ZP6AYmy",
+      "trial_id": "9d581d33-a9c2-4ae3-9cac-e535bae39e67",
+      "started_at": "2026-09-23T22:07:52.081080Z",
+      "finished_at": "2026-09-23T22:08:08.055211Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "c1d4a4c8c567bf117dbccb60227e4f262b5b41a49dd2aaa66602bb69b4d0f848",
+      "output_sha256": "9d91c23db469ecab00a6fb63e76c9df8a10051fa5f006e38f1b67db4ba2c8f9d",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-1-20260923T220809337114/dkny-visual__X3vLTp8",
+      "trial_id": "c0076477-bd97-4748-8f25-49baab300147",
+      "started_at": "2026-09-23T22:08:10.057808Z",
+      "finished_at": "2026-09-23T22:08:40.208413Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "a3b0136c136a3a869e573271732e656c5c4838f290e240a0a927555780c1139d",
+      "output_sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-luna-1-20260923T220841673011/dkny-visual__y5hViD4",
+      "trial_id": "cae22a27-eeb4-4924-a8d4-34af1c690cb4",
+      "started_at": "2026-09-23T22:08:42.290902Z",
+      "finished_at": "2026-09-23T22:09:10.081198Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "1e7f6751b380697962c74fbcf40e9f1bc385202867a1070e75973851546ab388",
+      "output_sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-2-20260923T220911574446/dkny-technical__ECDYMUJ",
+      "trial_id": "410bbcfb-726a-4d87-8e31-52851727dbfe",
+      "started_at": "2026-09-23T22:09:12.317124Z",
+      "finished_at": "2026-09-23T22:09:28.758657Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "84131fc1d750e0195838d1ff2edec235b775ffacfffb57cc66e6b74ea2ebff62",
+      "output_sha256": "6aac00d282385f1064bb5a0a0673df1ae999da2bf372dad616894ee50404abaf",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-technical-luna-2-20260923T220930003878/dkny-technical__J4XgqE2",
+      "trial_id": "670133d0-3d92-4a36-8c52-a5c3161bebff",
+      "started_at": "2026-09-23T22:09:30.604218Z",
+      "finished_at": "2026-09-23T22:09:51.486736Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "3497b41e461be0d65583686ec68d98a3397b8525f925ca9ece7858761652a5ba",
+      "output_sha256": "d6c249b653d636a127814c141149d27e00d4761c3e046bbbb1ac70bea9f4cd72",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-luna-2-20260923T220952896407/dkny-visual__Fx9WZam",
+      "trial_id": "ab3fca2b-383d-4e82-93ec-5587b5758f17",
+      "started_at": "2026-09-23T22:09:53.559691Z",
+      "finished_at": "2026-09-23T22:10:21.316125Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "3cbf51099ac89cf660c87cc603f53b0d9ec9d2a35dcb577884d77297ddbda2ac",
+      "output_sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-2-20260923T221022776559/dkny-visual__QuoNFMi",
+      "trial_id": "86a0b78c-af97-4827-b991-a72edf61f50f",
+      "started_at": "2026-09-23T22:10:23.628606Z",
+      "finished_at": "2026-09-23T22:10:51.560707Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "9b41d76d2d5afa3258f8371fb11a43c2a93339ff4cd0ae18570f4dc0214eb03f",
+      "output_sha256": "92d57f9edee26683638a9c02bc69350aba0416116d548238cfb42d44b3484b6f",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-technical-luna-3-20260923T221053077494/dkny-technical__YFRJ9BD",
+      "trial_id": "835e380e-d242-4e2c-a208-4134fcb8d7d5",
+      "started_at": "2026-09-23T22:10:53.782375Z",
+      "finished_at": "2026-09-23T22:11:14.235088Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "d00d742d698233bbdc253214eba7146e7654f657a0e2774783a92eaf9f1ac290",
+      "output_sha256": "1aa2fd8c1e9ac81f6bd5d6d9dd6b1aecefae2a72efd098157e06f52799fe8b99",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-technical-jev_luna-3-20260923T221115710024/dkny-technical__b8UTkeL",
+      "trial_id": "d662c05a-a5bc-4972-9d3f-3152bfd7f666",
+      "started_at": "2026-09-23T22:11:16.470077Z",
+      "finished_at": "2026-09-23T22:11:32.626263Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "903ed7cdd503e5a101e5fb00c5de1570e2c1f12710262c92cebe591560ee790c",
+      "output_sha256": "68bfbcab8887384e3c6bfe9c42dffb8e0d3e92969735e2e95a91091156e908b4",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-jev_luna-3-20260923T221134083777/dkny-visual__XsNvq3D",
+      "trial_id": "aaa9bdb1-c54b-482a-a3aa-7e56e49886ea",
+      "started_at": "2026-09-23T22:11:34.787037Z",
+      "finished_at": "2026-09-23T22:12:01.971736Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "df9ac76a8aa16bc53129469da992f91981b85fb086d1f908ad5edb620525b4c7",
+      "output_sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626",
+      "tokens_and_cost_reconciled": true
+    },
+    {
+      "original_trial": "local-results/jobs/pilot-visual-luna-3-20260923T221203453269/dkny-visual__W5gL6KK",
+      "trial_id": "1cb5421b-a169-4460-90b0-a3624ed0714e",
+      "started_at": "2026-09-23T22:12:04.191556Z",
+      "finished_at": "2026-09-23T22:12:29.469153Z",
+      "agent_info": {
+        "name": "image-agent-bench",
+        "version": "0.1.0",
+        "model_info": {
+          "name": "gpt-5.6-luna",
+          "provider": null
+        }
+      },
+      "verifier_result": {
+        "rewards": {
+          "technical_success": 1
+        }
+      },
+      "source_result_sha256": "1ee236c8bd5d9db296eb43f95a796cc55ae24ebd23901551ca927c1a111948df",
+      "output_sha256": "c59e75c42e9e869f5879957ab76091bcd3be6aae06a572d29f1a87c895a296e4",
+      "tokens_and_cost_reconciled": true
+    }
+  ],
+  "replay_command": [
+    ".venv/bin/harbor",
+    "run",
+    "--path",
+    "local-results/golden-audit/task",
+    "--agent",
+    "nop",
+    "--jobs-dir",
+    "local-results/golden-audit/jobs",
+    "--job-name",
+    "20260923T225654819356",
+    "--n-concurrent",
+    "1",
+    "--max-retries",
+    "0"
+  ],
+  "harbor_replay_result": "local-results/golden-audit/jobs/20260923T225654819356/task__L2aSQi5/result.json",
+  "harbor_replay_id": "2e8ba1e8-cdea-47e5-aa20-5cdfee8ea073",
+  "verifier_code_sha256": "3e6b1f39bd0defe77b719b19f47a65eff4d703c705657840bbba5c89b240f132"
+}

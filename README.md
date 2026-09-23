@@ -7,6 +7,10 @@ Piloto con **Harbor 0.20.0**, **GPT-5.6 Luna** y **JEV vía LangChain**.
 Luna dispone de las mismas herramientas y procedimientos en ambos brazos.
 JEV clasifica texto; no observa imágenes ni genera comandos arbitrarios.
 
+**Estado: piloto ejecutado y auditado; el pedido publicitario completo sigue
+pendiente.** La comparación contra golden está corrida; la aprobación visual
+y los ocho tamaños publicitarios con límite de 150 kB aún no están completados.
+
 ## Imagen y referencias
 
 Elegimos **DKNYgirl** de [RetargetMe](https://people.csail.mit.edu/mrub/retargetme/):
@@ -18,6 +22,37 @@ Los votos originales no califican automáticamente una nueva salida.
 Los archivos originales y referencias se obtienen del archivo oficial de 2011,
 sin alterar sus dimensiones ni incluir referencias dentro del entorno del agente.
 El código es abierto; las imágenes conservan sus créditos y condiciones originales.
+
+## Antes y después — archivos reales
+
+Imágenes copiadas de las ejecuciones registradas, sin retoques. Se muestran todas
+las repeticiones visuales, incluidas las salidas idénticas. Los PNG conservan su
+resolución original; el ancho de visualización en esta página es solo para lectura.
+
+| Original: 1024×673 | Referencia humana CR: 512×673 |
+|---|---|
+| <img src="assets/original.png" width="512" alt="Original DKNYgirl con persona y taxis"> | <img src="assets/reference-cr.png" width="256" alt="Referencia RetargetMe: recorte CR"> |
+
+La referencia CR es el resultado más preferido para esta foto con original visible
+(57 de 63 comparaciones). Es un recorte del original desde x=136 hasta x=648.
+
+| Repetición | Luna | JEV → Luna |
+|---|---|---|
+| 1 | <img src="assets/visual-luna-1.png" width="256" alt="luna, repetición 1"><br>512×673 · 550,288 bytes<br>Recorte x=128 · diferencia respecto de CR: -8 px | <img src="assets/visual-jev_luna-1.png" width="256" alt="jev_luna, repetición 1"><br>512×673 · 550,288 bytes<br>Recorte x=128 · diferencia respecto de CR: -8 px |
+| 2 | <img src="assets/visual-luna-2.png" width="256" alt="luna, repetición 2"><br>512×673 · 551,015 bytes<br>Recorte x=150 · diferencia respecto de CR: +14 px | <img src="assets/visual-jev_luna-2.png" width="256" alt="jev_luna, repetición 2"><br>512×673 · 550,888 bytes<br>Recorte x=145 · diferencia respecto de CR: +9 px |
+| 3 | <img src="assets/visual-luna-3.png" width="256" alt="luna, repetición 3"><br>512×673 · 544,359 bytes<br>Recorte x=160 · diferencia respecto de CR: +24 px | <img src="assets/visual-jev_luna-3.png" width="256" alt="jev_luna, repetición 3"><br>512×673 · 551,015 bytes<br>Recorte x=150 · diferencia respecto de CR: +14 px |
+
+**Resize proporcional, repetición 1.** Las seis ejecuciones técnicas produjeron
+el mismo PNG 512×337, de 268.121 bytes. Se muestran ambos brazos:
+
+| Luna | JEV → receta |
+|---|---|
+| <img src="assets/technical-luna-1.png" width="384" alt="Resize proporcional de Luna"> | <img src="assets/technical-jev_luna-1.png" width="384" alt="Resize proporcional de JEV y receta"> |
+
+Fuente y créditos: Rubinstein, Gutierrez, Sorkine y Shamir,
+[*A Comparative Study of Image Retargeting*](https://people.csail.mit.edu/mrub/retargetme/),
+2010; archivos de RetargetMe del 12/05/2011. Las fotografías y recortes no están
+cubiertos por la licencia MIT del código. [Origen y SHA-256 de cada imagen](reports/image-manifest.json).
 
 ## Alcance del piloto
 
@@ -62,6 +97,46 @@ tokens, no facturas; no incluyen desarrollo, infraestructura ni esta conversaci�
 [Trazas ATIF y llamadas](reports/traces.jsonl) · [Controles](reports/controls.json) ·
 [Conciliación de consumo](reports/accounting-audit.json)
 
+## ¿Se logró todo? Evidencia y comparación con golden
+
+**El piloto funcionó; el pedido publicitario completo todavía no está logrado.**
+El 12/12 anterior corresponde al contrato técnico reducido de dos tareas PNG.
+
+| Comprobación | Resultado |
+|---|---|
+| Ejecuciones originales en Harbor, con trazas y consumo | 12/12 verificadas |
+| Resize proporcional contra cálculo independiente | 6/6 pasan |
+| Salidas visuales × referencias originales | 6×8 = 48 comparaciones ejecutadas en Harbor |
+| Coincidencia exacta con cualquiera de las ocho referencias | 0/6 |
+| Recorte exacto del original, sin reescalar ni inventar píxeles | 6/6 |
+| Desplazamiento horizontal respecto del recorte CR | 8–24 píxeles |
+| Archivos actuales de hasta 150.000 bytes | 0/12; pesan 268.121–551.015 bytes |
+| Ocho tamaños publicitarios × cuatro extensiones | No ejecutado |
+| Aceptación humana de calidad visual | Pendiente |
+
+La nueva verificación es un **replay de los archivos guardados**, ejecutado en
+Harbor con agente `nop`, con controles de identidad, referencias diferentes y
+dimensiones incorrectas. No son 12 ejecuciones nuevas de los modelos. Los SHA-256
+vinculan cada imagen con la traza publicada y las referencias originales.
+La versión instalada de Harbor 0.20.0 no expone `job regrade`; se usa una tarea
+adicional que evalúa los artefactos guardados y conserva intactos los resultados
+del piloto. Costo de API de esta reevaluación: USD 0.
+
+Comparamos igualdad de píxeles, MAE, RMSE, PSNR y geometría del recorte. Son
+distancias descriptivas; **no tienen un umbral inventado de calidad aprobada**.
+Un encuadre distinto puede ser válido. Los votos del estudio califican sus
+resultados históricos, y no pueden transferirse automáticamente a nuevas salidas.
+El [estudio original](https://people.csail.mit.edu/mrub/retargetme/) advierte que
+las distancias computacionales no siempre coinciden con la preferencia humana.
+
+[Informe y evidencias](reports/golden-audit.md) ·
+[48 comparaciones, hashes y recibos de Harbor](reports/golden-audit.json).
+
+El CSV de consumo aportado coincide a nivel agregado con JEV: **6 solicitudes,
+2.730 tokens de entrada y 222 de salida**. No incluye importes ni permite
+conciliar solicitudes individuales o facturación de OpenAI. Se publica solamente
+el [resumen sin identificadores privados](reports/provider-usage-check.json).
+
 ## Ejecutar
 
 Requiere Docker funcionando y [uv](https://docs.astral.sh/uv/). El primer paso
@@ -75,6 +150,18 @@ uv run python run.py controls
 uv run python run.py pilot --env-file /ruta/privada/.env
 uv run python run.py report
 ```
+
+Para repetir la auditoría contra golden sobre los mismos archivos locales,
+sin llamar a los modelos:
+
+```sh
+uv run python -m unittest -v test_bench audit.test_golden
+uv run python audit/golden.py run
+```
+
+Esta auditoría requiere los artefactos originales en `local-results/jobs/`.
+El informe publicado conserva sus identificadores y hashes; `assets/` contiene
+copias verificadas para visualizar los resultados en GitHub.
 
 El archivo privado debe definir `OPENAI_API_KEY` y `TYPESAFE_API_KEY`; también
 se aceptan `open_ai_api_key` y `jev_api_key`. Las claves se cargan en memoria

@@ -1,0 +1,32 @@
+{
+  "status": "AGGREGATE_MATCH",
+  "model_group": "JEV",
+  "csv_days": [
+    "2026-09-23"
+  ],
+  "csv_totals": {
+    "requests": 6,
+    "input_tokens": 2730,
+    "output_tokens": 222
+  },
+  "recorded_api_totals": {
+    "requests": 6,
+    "input_tokens": 2730,
+    "output_tokens": 222
+  },
+  "difference": {
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0
+  },
+  "limitations": [
+    "Daily aggregate: no per-request matching possible.",
+    "CSV contains no dollar amounts; this is usage reconciliation, not invoice reconciliation.",
+    "This CSV does not establish OpenAI billing."
+  ],
+  "private_fields_omitted": [
+    "api_key_name",
+    "api_key_id",
+    "user_email"
+  ]
+}

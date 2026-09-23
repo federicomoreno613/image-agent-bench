@@ -1,0 +1,52 @@
+[
+  {
+    "file": "assets/original.png",
+    "source": "data/DKNYgirl.png",
+    "sha256": "29749466f498211107ce0a6f871754a5ae8cbf91431cebc65efa5ec57daa341c"
+  },
+  {
+    "file": "assets/reference-cr.png",
+    "source": "data/DKNYgirl_0.50_cr.png",
+    "sha256": "0ea8db6835d56803b65c88ef863d415d627576d2f010512bca406d1d9a9d5613"
+  },
+  {
+    "file": "assets/technical-luna-1.png",
+    "source": "local-results/jobs/pilot-technical-luna-1-20260923T220730811349/dkny-technical__4p7HjvN/agent/output.png",
+    "sha256": "2828691d1921ecb64f5c5a46f4daca35790073c522b90c5ca640458ff0bac473"
+  },
+  {
+    "file": "assets/technical-jev_luna-1.png",
+    "source": "local-results/jobs/pilot-technical-jev_luna-1-20260923T220751469503/dkny-technical__ZP6AYmy/agent/output.png",
+    "sha256": "9d91c23db469ecab00a6fb63e76c9df8a10051fa5f006e38f1b67db4ba2c8f9d"
+  },
+  {
+    "file": "assets/visual-jev_luna-1.png",
+    "source": "local-results/jobs/pilot-visual-jev_luna-1-20260923T220809337114/dkny-visual__X3vLTp8/agent/output.png",
+    "sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a"
+  },
+  {
+    "file": "assets/visual-luna-1.png",
+    "source": "local-results/jobs/pilot-visual-luna-1-20260923T220841673011/dkny-visual__y5hViD4/agent/output.png",
+    "sha256": "d60a7d7248cbb66affe1bca327386ec773d36d91bc16dc56855cc8e43caedb1a"
+  },
+  {
+    "file": "assets/visual-luna-2.png",
+    "source": "local-results/jobs/pilot-visual-luna-2-20260923T220952896407/dkny-visual__Fx9WZam/agent/output.png",
+    "sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626"
+  },
+  {
+    "file": "assets/visual-jev_luna-2.png",
+    "source": "local-results/jobs/pilot-visual-jev_luna-2-20260923T221022776559/dkny-visual__QuoNFMi/agent/output.png",
+    "sha256": "92d57f9edee26683638a9c02bc69350aba0416116d548238cfb42d44b3484b6f"
+  },
+  {
+    "file": "assets/visual-jev_luna-3.png",
+    "source": "local-results/jobs/pilot-visual-jev_luna-3-20260923T221134083777/dkny-visual__XsNvq3D/agent/output.png",
+    "sha256": "5e0b95d8082762f951e1a75521c09488b480cdc6c94842d10e45addf91a59626"
+  },
+  {
+    "file": "assets/visual-luna-3.png",
+    "source": "local-results/jobs/pilot-visual-luna-3-20260923T221203453269/dkny-visual__W5gL6KK/agent/output.png",
+    "sha256": "c59e75c42e9e869f5879957ab76091bcd3be6aae06a572d29f1a87c895a296e4"
+  }
+]
