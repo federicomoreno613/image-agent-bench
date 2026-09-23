@@ -1,0 +1,121 @@
+{
+  "dataset": "RetargetMe",
+  "case": "DKNYgirl_0.50",
+  "archive_url": "https://people.csail.mit.edu/mrub/retargetme/download/dataset-20110512.zip",
+  "files": [
+    {
+      "file": "DKNYgirl.png",
+      "archive_member": "DKNYgirl/DKNYgirl.png",
+      "sha256": "29749466f498211107ce0a6f871754a5ae8cbf91431cebc65efa5ec57daa341c",
+      "dimensions": [
+        1024,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_cr.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_cr.png",
+      "sha256": "0ea8db6835d56803b65c88ef863d415d627576d2f010512bca406d1d9a9d5613",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_sv.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_sv.png",
+      "sha256": "a8b53f2c98903d2f1b3f59f79b6c5688deb139d7b45bc12b175c53de3fb5a855",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_multiop.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_multiop.png",
+      "sha256": "fc5ca68453a8618735827fc1fc5c764f332340c4daee2501bc5b06af23f620d3",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_sc.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_sc.png",
+      "sha256": "d84bed49fc975a31ad799e20d4cafc4b27b4992d811b1060325d3542a9af0ecc",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_scl.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_scl.png",
+      "sha256": "ccaedde03aad510a443585dde24b7f31daab67bb46f002841da8637733ffa786",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_sm.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_sm.png",
+      "sha256": "40e8fd0b8ad9d76f95da6214f7644d73d0ab0c90fec721ff6199a361b056e74a",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_sns.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_sns.png",
+      "sha256": "da0de599d47af7d4ef368862c3e32f651fef16ec8d32084e6f95421988d849c0",
+      "dimensions": [
+        512,
+        673
+      ]
+    },
+    {
+      "file": "DKNYgirl_0.50_warp.png",
+      "archive_member": "DKNYgirl/DKNYgirl_0.50_warp.png",
+      "sha256": "a33537b9cdba971a10f24e108894860eb26e4655b08de7ef27b5485862bf7211",
+      "dimensions": [
+        512,
+        673
+      ]
+    }
+  ],
+  "votes": {
+    "ref": {
+      "cr": 57,
+      "sv": 33,
+      "multiop": 27,
+      "sc": 40,
+      "scl": 7,
+      "sm": 44,
+      "sns": 18,
+      "warp": 26
+    },
+    "blind": {
+      "cr": 43,
+      "sv": 36,
+      "multiop": 20,
+      "sc": 43,
+      "scl": 18,
+      "sm": 39,
+      "sns": 23,
+      "warp": 30
+    }
+  },
+  "operators_in_study": [
+    "cr",
+    "sv",
+    "multiop",
+    "sc",
+    "scl",
+    "sm",
+    "sns",
+    "warp"
+  ],
+  "reference_note": "Historical preferences among eight existing results; not a score for new outputs."
+}

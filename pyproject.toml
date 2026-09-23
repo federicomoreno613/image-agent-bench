@@ -1,0 +1,16 @@
+[project]
+name = "image-agent-bench"
+version = "0.1.0"
+description = "A bounded Harbor pilot: Luna vs a JEV workflow router with Luna fallback."
+requires-python = ">=3.12"
+dependencies = [
+  "harbor==0.20.0",
+  "langchain-typesafe==0.0.1a3",
+  "openai>=2,<3",
+  "pillow>=11,<13",
+  "python-dotenv>=1,<2",
+  "scipy>=1.14,<2",
+]
+
+[tool.uv]
+package = false
