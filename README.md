@@ -67,6 +67,78 @@ Tope de API: USD 5 incluyendo preparación; 10 minutos y 40 llamadas por tarea.
 Las referencias y los votos permanecen exclusivamente en el evaluador.
 La calidad visual exige revisión humana ciega; éxito técnico no significa calidad.
 
+## Cómo usamos Harbor
+
+Harbor **ejecuta y evalúa cada intento**: crea el contenedor, invoca nuestro
+agente y corre el verificador al terminar. El controlador del repo organiza la
+comparación; `ImageAgent` decide las llamadas y registra su consumo.
+
+```mermaid
+flowchart TB
+    PREP["prepare.py<br/>Foto original + dos tareas Harbor"]
+    CTRL["run.py controls<br/>Oracle debe pasar; nop debe fallar"]
+    PILOT["run.py pilot<br/>2 tareas × 2 brazos × 3 repeticiones"]
+    HARBOR["Harbor: un intento por vez<br/>Contenedor nuevo; sin reintentos"]
+    PREP --> CTRL
+    CTRL -->|"Controles OK y misma huella de código/datos"| PILOT
+    PILOT --> HARBOR
+
+    subgraph HOST["Agente en el host: aquí se usan las claves y las API"]
+        AGENT["agent.py · ImageAgent"]
+        JEV["JEV vía LangChain<br/>Clasifica el pedido de texto"]
+        KNOWN{"¿Receta conocida, confianza ≥ 0,90<br/>y parámetros válidos?"}
+        RECIPE["Arma el comando<br/>de la receta proporcional"]
+        LUNA["GPT-5.6 Luna<br/>Bucle de herramientas e inspección de imagen"]
+        AGENT -->|"Brazo luna"| LUNA
+        AGENT -->|"Brazo jev_luna"| JEV
+        JEV --> KNOWN
+        KNOWN -->|"Sí"| RECIPE
+        KNOWN -->|"No"| LUNA
+        JEV -.->|"Error del proveedor"| LUNA
+        RECIPE -.->|"Si el comando falla"| LUNA
+    end
+
+    subgraph DOCKER["Entorno Docker de Harbor: sin red ni claves API"]
+        TOOLS["Herramientas compartidas<br/>ImageMagick, Python/Pillow y receta"]
+        OUTPUT["/workspace/output.png"]
+        VERIFY["Al terminar el agente: tests/test.sh → verify.py<br/>Contrato técnico + aislamiento de red"]
+        TOOLS --> OUTPUT
+        OUTPUT --> VERIFY
+    end
+
+    HARBOR -->|"Invoca"| AGENT
+    HARBOR -->|"Crea el entorno"| TOOLS
+    LUNA <-->|"Comandos, resultados e imágenes"| TOOLS
+    RECIPE -->|"Ejecuta mediante Harbor"| TOOLS
+
+    EVIDENCE["Artefactos por intento<br/>PNG + ATIF + accounting.json + reward.json + result.json"]
+    AGENT -.->|"Traza, tokens, pasos, tiempo y costo estimado"| EVIDENCE
+    OUTPUT -->|"Copia guardada"| EVIDENCE
+    VERIFY -->|"Recompensa técnica"| EVIDENCE
+    EVIDENCE --> REPORT["run.py report<br/>Comparación en reports/pilot.json y pilot.md"]
+    EVIDENCE --> REPLAY["Auditoría posterior: audit/golden.py<br/>Otra tarea Harbor con agente nop; sin llamadas API"]
+    GOLDEN["8 referencias originales de RetargetMe<br/>Reservadas para el evaluador"] --> REPLAY
+    REPLAY --> AUDIT["reports/golden-audit.json y .md<br/>48 comparaciones visuales + controles técnicos"]
+```
+
+Cada tarea creada por [prepare.py](prepare.py) tiene `instruction.md`, `task.toml`,
+`environment/`, `solution/solve.sh` para el oracle y `tests/test.sh` para el
+verificador. [run.py](run.py) llama a `harbor run --agent agent:ImageAgent`;
+[agent.py](agent.py) implementa la interfaz `BaseAgent` de Harbor. Ambos brazos
+tienen las mismas herramientas y acceso a la receta; JEV puede evitar el bucle
+de Luna cuando reconoce el procedimiento.
+
+Las API se llaman desde el host; los comandos se ejecutan en Docker como usuario
+sin privilegios. El verificador se incorpora después del agente. Las referencias
+golden no se entregan a los agentes del piloto: [audit/golden.py](audit/golden.py)
+las compara después contra los archivos guardados, en una ejecución separada.
+
+Harbor conserva los resultados de cada intento; nuestra instrumentación calcula
+los costos a partir de tokens y tarifas. **No son importes facturados.** El tiempo
+del agente incluye JEV, Luna y herramientas; el tiempo total también incluye el
+contenedor y la evaluación. La recompensa del piloto mide cumplimiento técnico;
+la aceptación visual humana sigue pendiente.
+
 ## Primer resultado medido
 
 12/12 salidas pasaron la verificación técnica. Una foto y tres repeticiones por
