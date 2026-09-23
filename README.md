@@ -53,7 +53,8 @@ del controlador y no se copian al contenedor ni a las trazas. No publicar `.env`
 Los controles exigen que la solución conocida pase y que no hacer nada falle,
 para ambas tareas. Un cambio de código o datos invalida ese control.
 Docker ejecuta las herramientas sin red y con usuario sin privilegios;
-el evaluador comprueba que solo exista la interfaz de loopback.
+el evaluador comprueba que no haya rutas IPv4 y que una conexión externa devuelva
+«red inalcanzable» (el kernel puede mostrar interfaces de túnel inactivas).
 La instalación de herramientas ocurre al construir la imagen, antes del agente.
 
 `reports/pilot.md` resume resultados; `reports/pilot.json` conserva cada medición.

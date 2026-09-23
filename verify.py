@@ -1,6 +1,8 @@
 """Technical checks only. Visual acceptance must be recorded separately."""
 import argparse
+import errno
 import json
+import socket
 from pathlib import Path
 from PIL import Image, ImageChops, ImageStat
 
@@ -37,7 +39,10 @@ if __name__ == "__main__":
     p.add_argument("--logs", type=Path, default=Path("/logs/verifier"))
     a = p.parse_args()
     result = verify(a.source, a.output, a.kind)
-    result["network_isolated"] = {p.name for p in Path("/sys/class/net").iterdir()} == {"lo"}
+    with socket.socket() as probe:
+        probe.settimeout(1)
+        result["network_isolated"] = (probe.connect_ex(("1.1.1.1", 443)) == errno.ENETUNREACH
+                                      and len(Path("/proc/net/route").read_text().splitlines()) == 1)
     result["technical_success"] &= result["network_isolated"]
     a.logs.mkdir(parents=True, exist_ok=True)
     (a.logs / "checks.json").write_text(json.dumps(result, indent=2))
