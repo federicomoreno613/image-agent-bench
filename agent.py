@@ -206,6 +206,7 @@ class ImageAgent(BaseAgent):
                     )
                 except BaseException as exc:
                     self.record_call(LUNA, luna_usage(None), time.perf_counter() - started, error=type(exc).__name__)
+                    self.step("agent", "Luna request failed: " + type(exc).__name__, model_name=LUNA, llm_call_count=1)
                     raise
                 usage = luna_usage(response.usage)
                 self.budget.settle(reservation, usage["cost_usd"])
@@ -227,6 +228,8 @@ class ImageAgent(BaseAgent):
                         result, image = await self.execute(environment, f.name, call["arguments"], f.call_id)
                     except Exception as exc:
                         result, image = "Tool failed: " + type(exc).__name__, None
+                        self.step("agent", "Tool result", llm_call_count=0,
+                                  observation={"results": [{"source_call_id": f.call_id, "content": result}]})
                     history.append({"type": "function_call_output", "call_id": f.call_id, "output": result})
                     if image:
                         history.append({"role": "user", "content": [{"type": "input_text", "text": "Requested tool image:"},
