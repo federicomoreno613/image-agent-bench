@@ -7,13 +7,24 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from PIL import Image
-from agent import Budget, complete_sum, luna_usage, select_route
+from agent import Budget, ImageAgent, complete_sum, luna_usage, select_route
+from harbor.models.trajectories.trajectory import Trajectory
 from verify import verify
 
 SOURCE = Path(__file__).parent / "data/DKNYgirl.png"
 
 
 class Checks(unittest.TestCase):
+    def test_trace_links_observation_to_issuing_step(self):
+        with tempfile.TemporaryDirectory() as folder:
+            agent = ImageAgent(logs_dir=Path(folder))
+            agent.step("agent", "Execute", llm_call_count=0,
+                       tool_calls=[{"tool_call_id": "test", "function_name": "run_command", "arguments": {"command": "true"}}])
+            agent.observe("test", "exit 0")
+            trace = Trajectory.model_validate({"schema_version": "ATIF-v1.7", "session_id": "test",
+                "agent": {"name": agent.name(), "version": agent.version()}, "steps": agent.steps})
+            self.assertEqual(trace.steps[0].observation.results[0].source_call_id, "test")
+
     def test_verifier_accepts_correct_and_rejects_corrupt_or_wrong_pixels(self):
         with tempfile.TemporaryDirectory() as folder:
             output = Path(folder) / "output.png"

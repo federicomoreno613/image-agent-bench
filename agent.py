@@ -158,6 +158,13 @@ class ImageAgent(BaseAgent):
         with (self.logs_dir / "calls.jsonl").open("a") as f:
             f.write(json.dumps(row) + "\n")
 
+    def observe(self, call_id, text):
+        # ATIF observations belong to the step that issued the tool call.
+        step = next(s for s in reversed(self.steps)
+                    if any(c["tool_call_id"] == call_id for c in (s.get("tool_calls") or [])))
+        step.setdefault("observation", {"results": []})["results"].append(
+            {"source_call_id": call_id, "content": text})
+
     async def execute(self, environment, name, arguments, call_id):
         self.tool_count += 1
         image = None
@@ -188,8 +195,7 @@ class ImageAgent(BaseAgent):
                 text = "Image attached."
         else:
             raise ValueError("Unknown tool")
-        self.step("agent", "Tool result", llm_call_count=0,
-                  observation={"results": [{"source_call_id": call_id, "content": text}]})
+        self.observe(call_id, text)
         return text, image
 
     async def luna(self, instruction, environment):
@@ -228,8 +234,7 @@ class ImageAgent(BaseAgent):
                         result, image = await self.execute(environment, f.name, call["arguments"], f.call_id)
                     except Exception as exc:
                         result, image = "Tool failed: " + type(exc).__name__, None
-                        self.step("agent", "Tool result", llm_call_count=0,
-                                  observation={"results": [{"source_call_id": f.call_id, "content": result}]})
+                        self.observe(f.call_id, result)
                     history.append({"type": "function_call_output", "call_id": f.call_id, "output": result})
                     if image:
                         history.append({"role": "user", "content": [{"type": "input_text", "text": "Requested tool image:"},
